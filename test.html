@@ -1,0 +1,201 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"> 
+<head>
+<title>CertainTeed News and Events</title>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:TemplateHidden msdt:dt="string">0</mso:TemplateHidden>
+<mso:MasterPageDescription msdt:dt="string">Displays the CertainTeed News and Events result item template.</mso:MasterPageDescription>
+<mso:ContentTypeId msdt:dt="string">0x0101002039C03B61C64EC4A04F5361F385106603007E55CF694CACBB4B8DBEF02362181CCE</mso:ContentTypeId>
+<mso:TargetControlType msdt:dt="string">;#SearchResults;#</mso:TargetControlType>
+<mso:HtmlDesignAssociated msdt:dt="string">1</mso:HtmlDesignAssociated>
+<mso:ManagedPropertyMapping msdt:dt="string">&#39;Title&#39;:&#39;Title&#39;,&#39;Path&#39;:&#39;Path&#39;,&#39;Description&#39;:&#39;Description&#39;,&#39;BodyOWSMTXT&#39;:&#39;BodyOWSMTXT&#39;,&#39;ctExpiresDate&#39;:&#39;ctExpiresDate&#39;,&#39;ctEndDateTime&#39;:&#39;ctEndDateTime&#39;,&#39;ctStartDateTime&#39;:&#39;ctStartDateTime&#39;,&#39;ctSortDate&#39;:&#39;ctSortDate&#39;,&#39;CategoryOWSCHCS&#39;:&#39;CategoryOWSCHCS&#39;,&#39;FileExtension&#39;:&#39;FileExtension&#39;,&#39;ViewsLifeTime&#39;:&#39;ViewsLifeTime&#39;,&#39;ParentLink&#39;:&#39;ParentLink&#39;,&#39;FileType&#39;:&#39;FileType&#39;,&#39;IsContainer&#39;:&#39;IsContainer&#39;,&#39;SecondaryFileExtension&#39;:&#39;SecondaryFileExtension&#39;,&#39;DisplayAuthor&#39;:&#39;DisplayAuthor&#39;,&#39;ContentType&#39;:&#39;ContentType&#39;,&#39;ctAllDayEvent&#39;:&#39;ctAllDayEvent&#39;</mso:ManagedPropertyMapping>
+<mso:HtmlDesignStatusAndPreview msdt:dt="string">https://dev-ctportal.certainteed.com/_catalogs/masterpage/Display%20Templates/Search/CertainTeed_Item_NewsEvents.html, Conversion successful.</mso:HtmlDesignStatusAndPreview>
+<mso:HtmlDesignConversionSucceeded msdt:dt="string">True</mso:HtmlDesignConversionSucceeded>
+<mso:CrawlerXSLFile msdt:dt="string"></mso:CrawlerXSLFile>
+<mso:HtmlDesignPreviewUrl msdt:dt="string"></mso:HtmlDesignPreviewUrl>
+<mso:_dlc_DocId msdt:dt="string">PSZUHVM42CWU-2036621469-420</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">17fdf604-184d-43e5-a297-df24f736c0b2</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dev-ctportal.certainteed.com/_layouts/15/DocIdRedir.aspx?ID=PSZUHVM42CWU-2036621469-420, PSZUHVM42CWU-2036621469-420</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <div id="Item_Default">
+<!--#_ 
+        if(!$isNull(ctx.CurrentItem) && !$isNull(ctx.ClientControl)){
+            var id = ctx.ClientControl.get_nextUniqueId();
+            var itemId = id + Srch.U.Ids.item;
+            var currentItemIdx = ctx.CurrentItemIdx + 1;
+            var lastItemIdx = ctx.CurrentGroup.RowCount;
+            var itemPath = ctx.CurrentItem.Path;
+			
+			var ContentType = ctx.CurrentItem.ContentType;
+			var Title = ctx.CurrentItem.Title;
+			var AnnouncementBodyText = ctx.CurrentItem.BodyOWSMTXT;
+			var EventDescription = ctx.CurrentItem.Description;
+			var EventStartDateTime = ctx.CurrentItem.ctStartDateTime;
+			var EventEndDateTime = ctx.CurrentItem.ctEndDateTime;
+			var AnnouncementExpiresDate = ctx.CurrentItem.ctExpiresDate;
+			var EventAnnouncementSortDate = ctx.CurrentItem.ctSortDate;//update
+			var Category = ctx.CurrentItem.CategoryOWSCHCS;
+			var url = _spPageContextInfo.siteAbsoluteUrl;
+			var allDayEvent = ctx.CurrentItem.ctAllDayEvent;
+			var url = _spPageContextInfo.siteAbsoluteUrl;
+			
+ 			// Remove html from string using jQuery .text() function.
+ 			AnnouncementBodyText = AnnouncementBodyText != null ? jQuery(AnnouncementBodyText).text() : "";
+ 			EventDescription = EventDescription != null ? EventDescription : "";
+ 			
+ 			// Limit of characters in a string.
+ 			var stringCharLimit = 100;
+ 			
+ 			// Check string lengths and trim if necessary.
+ 			if(AnnouncementBodyText.length > stringCharLimit) {
+ 				AnnouncementBodyText = AnnouncementBodyText.substr(0,stringCharLimit)+'...';
+ 			}
+ 			if(EventDescription.length > stringCharLimit) {
+ 				EventDescription = EventDescription.substr(0,stringCharLimit)+'...';
+ 			}
+
+			
+			// Get day and month from the date fields.
+			var EventStartDayNum = "";
+			var EventStartMo = "";
+			var EventStartMoDay = "";
+			var EventStartTime = "";
+			var AnnouncementExpireDayNum = "";
+			var AnnouncementExpireMo = "";
+			
+			if(moment(EventStartDateTime).isValid()) {
+				EventStartDayNum = moment(EventStartDateTime).format("DD");
+				EventStartMo = moment(EventStartDateTime).format("MMM");
+				EventStartMoDay = moment(EventStartDateTime).format("dddd")+',';
+				EventStartTime =  moment(EventStartDateTime).format("hh:mm A");
+
+				if(allDayEvent == "1"){					
+					EventStartTime  = "12:00 AM"	
+				}
+				
+			}
+			if(moment(AnnouncementExpiresDate).isValid()) {
+				AnnouncementExpireDayNum = moment(AnnouncementExpiresDate).format("DD");
+				AnnouncementExpireMo = moment(AnnouncementExpiresDate).format("MMM");
+			} 		
+			
+			// Update, using ctSortDate since it includes both EventStartDate and AnnouncementStartDate.
+			var sortDateDayNum = "";
+			var sortDateMo = "";
+			var sortDateMoDay = "";
+			var sortDateTime = "";
+
+			if(moment(EventAnnouncementSortDate).isValid()) {
+				sortDateDayNum = moment(EventAnnouncementSortDate).format("DD");
+				sortDateMo = moment(EventAnnouncementSortDate).format("MMM");
+				sortDateMoDay = moment(EventAnnouncementSortDate).format("dddd")+',';
+				sortDateTime =  moment(EventAnnouncementSortDate).format("hh:mm A");
+			}
+_#-->
+            <div id="_#= $htmlEncode(itemId) =#_" name="Item" data-displaytemplate="CTNewsEvents" class="ct-search-item ct-news-events">
+            	<div class="inner-container">
+<!--#_ 
+					if(ContentType == "CertainTeed Announcement") {
+_#-->
+						<div class="left-container">
+							<div class="item-date-num">
+								_#=sortDateDayNum=#_
+							</div>
+							<div class="item-date-month">
+								_#=sortDateMo=#_
+							</div>
+						</div>
+						<div class="right-container">
+							<div class="top-container">
+								<div class="item-title">
+									<span class="item-icon">
+										<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+									</span>
+									<a href="_#=itemPath=#_">_#=Title =#_</a>
+                                </div>
+                                <div class="item-day-time">
+									<div class="icon">
+										<i class="fa fa-clock-o" aria-hidden="true"></i>
+									</div>
+									<div class="item-month-day">
+										_#=sortDateMoDay=#_
+									</div>
+									<div class="item-time">
+										_#=sortDateTime=#_
+									</div>
+								</div>
+							</div>
+							<div class="bottom-container">
+								<div class="item-text">
+									_#=AnnouncementBodyText=#_
+								</div>
+							</div>
+						</div>            
+<!--#_		
+					} 
+_#-->
+
+
+<!--#_ 
+					if(ContentType == "CertainTeed Event") {
+_#-->
+						<div class="left-container">
+							<div class="item-date-num">
+								_#=sortDateDayNum=#_
+							</div>
+							<div class="item-date-month">
+								_#=sortDateMo=#_
+							</div>
+						</div>
+						<div class="right-container">
+							<div class="top-container">
+								<div class="item-title">
+									<span>
+										<a href="_#=itemPath=#_">_#=Title =#_</a>
+									</span>
+								</div>
+								<div class="item-day-time">
+									<div class="icon">
+										<i class="fa fa-clock-o" aria-hidden="true"></i>
+									</div>
+									<div class="item-month-day">
+										_#=sortDateMoDay=#_
+									</div>
+									<div class="item-time">
+										_#=sortDateTime=#_
+									</div>
+								</div>
+							</div>
+							<div class="bottom-container">
+								<div class="item-text">
+									_#=EventDescription=#_
+								</div>
+							</div>
+						</div>
+<!--#_		
+					} 
+_#-->
+
+				</div>
+<!--#_		
+			if(currentItemIdx == lastItemIdx && _spPageContextInfo.serverRequestPath.indexOf("NewsEvents.aspx") == -1) { 
+                        
+_#-->			
+				<div class="view-all-events">
+					<a href="/sites/search/pages/NewsEvents.aspx?SiteUrl=_#=url=#_">View All News & Events</a>
+				</div>
+<!--#_		
+			} 
+_#-->
+  
+            </div>
+<!--#_ 
+        } 
+_#-->
+    </div>
+</body>
+</html>
