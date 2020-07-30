@@ -1,24 +1,27 @@
 <div class ="border">
-    <div fxLayout="row"  fxLayoutGap="70px">
-        <mat-card class="example-card">
+  <div fxLayout="row" fxLayoutGap="15px">
+    <div fxLayout="column"  fxLayoutGap="15px" fxFlex="26">
+        <mat-card class="example-card" >
             <mat-card-header class="header">                  
                 <mat-card-title >Pre-Arrival Actions</mat-card-title>                    
             </mat-card-header>                      
              <mat-divider></mat-divider>             
              <table>                
-                <tr>
-                    <div class="sub-title" fxLayout="row" fxLayoutGap="45%">
-                        <td>Action/task</td>
-                        <td>Status</td>    
-                    </div>                      
+                <tr>                    
+                        <td class="sub-title">Action/task</td>
+                        <td class="sub-title">Status</td>  
+                        <td></td>  
+                                       
                 </tr>                
                 <tr>         
                   <td>Tax Paperwork:</td>
-                  <td><button mat-flat-button class="mat-pending">Pending</button></td>         
+                  <td><span class="pending">Pending</span></td>  
+                  <td><mat-slide-toggle></mat-slide-toggle></td>      
                 </tr>
                 <tr>
                   <td>PC Setup:</td>
-                  <button mat-flat-button class="mat-complete">Complete</button>             
+                  <td><span class="completed">Completed</span></td>  
+                  <td><mat-slide-toggle></mat-slide-toggle></td>            
                 </tr>            
               </table>
         </mat-card>
@@ -29,19 +32,21 @@
              <mat-divider></mat-divider>             
              <table>                
                 <tr>
-                    <div class="sub-title" fxLayout="row" fxLayoutGap="45%">
-                        <td>Action/task</td>
-                        <td>Status</td>    
-                    </div>                      
+                    
+                        <td class="sub-title">Action/task</td>
+                        <td class="sub-title">Status</td>    
+                                         
                 </tr>                
                 <tr>         
                   <td>Security Badge:</td>
-                  <td><button mat-flat-button class="mat-pending">Pending</button></td> 
+                  <td><span class="pending">Pending</span></td> 
+                  <td><mat-slide-toggle ></mat-slide-toggle></td>
                          
                 </tr>
                 <tr>
                   <td>Company Codes:</td>
-                  <button mat-flat-button class="mat-complete">Complete</button>             
+                  <td><span class="completed">Completed</span></td>
+                  <td><mat-slide-toggle></mat-slide-toggle></td>             
                 </tr>            
               </table>
         </mat-card> 
@@ -51,23 +56,92 @@
             </mat-card-header>                      
              <mat-divider></mat-divider>             
              <table>                
-                <tr>
-                    <div class="sub-title" fxLayout="row" fxLayoutGap="45%">
-                        <td>Action/task</td>
-                        <td>Status</td>    
-                    </div>                      
+                <tr>                  
+                        <td class="sub-title">Action/task</td>
+                        <td class="sub-title">Status</td>    
+                                          
                 </tr>                
                 <tr>         
                   <td>Security Badge:</td>
-                  <td><button mat-flat-button class="mat-pending">Pending</button></td>         
+                  <td><span class="pending">Pending</span></td>
+                  <td><mat-slide-toggle></mat-slide-toggle></td>         
                 </tr>
                 <tr>
                   <td>Company Codes:</td>
-                  <button mat-flat-button class="mat-complete">Complete</button>             
+                  <td><span class="completed">Completed</span></td>  
+                  <td><mat-slide-toggle></mat-slide-toggle></td>           
                 </tr>            
               </table>
-        </mat-card> 
+        </mat-card>   
+    </div>
+    <div fxLayout="column" fxLayoutGap="15px" fxFlex="24">
+      <mat-card class="example-card">
+        <mat-card-title>Office Location
+        </mat-card-title>
+         <mat-divider></mat-divider>  
+         <h3 class="sub-title1">SGTS Service Desk</h3>  
+         <p>Saint-Gobain/CertainTeed Corporate Office
+          20 Moores Road, Malvern, PA 19355
+          Tel: 610-893-5555</p>
+    
+           <h3 class="sub-title1">Amenties:</h3>
+            <p>Onsite Gym (learn more)<br>
+              Cafeteria (Hours: M-F 7am - 1:30pm)<br>
+              Starbucks (Hours: M-F 7am - 3pm)</p>
+
+            <p>On your first day, upon entering the building via the main entrance proceed to the Security Desk to sign in. Security will alert your manager to come down to greet you.</p>
+    
+      </mat-card>
+    </div>    
+    <div fxLayout="column" fxLayoutGap="15px" fxFlex="25">
+
+      <mat-card class="example-card">
+        <mat-card-title>Your Information</mat-card-title>
+        <mat-divider></mat-divider>           
+           <p>SGID: E3028542<br>
+             Email: eric.marcussen@saint-gobain.com<br>
+             Desk Phone: (610) 893-5635<br>
+             Cell Phone: (610) 893-5635<br>
+             Desk/Office Location: 4C101 (View Floor Plan) Laptop Name: LT0174652</p>             
+     </mat-card> 
+
+      <mat-card class="example-card">
+        <mat-card-title>Contact</mat-card-title>
+        <mat-divider></mat-divider>
+ 
+         <h3 class="sub-title1">HR</h3>
+           <p>Caitlin Silvestri, (610) 893-5433,<br>
+               Caitlin.a.silvestri@saint-gobain.com</p>
+ 
+         <h3 class="sub-title1">Buddies</h3>
+           <p>Brian Tribulski, (610) 893-5555,<br>
+              Brian.Tribulski@saint-gobain.com</p>    
+     </mat-card> 
+         
+    </div> 
+    <div fxLayout="column" fxLayoutGap="15px" fxFlex="25"> 
+        <mat-card class="example-card">
+  <mat-card-title>Useful Links</mat-card-title>
+  <mat-divider></mat-divider>
+  <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain Website</h3></a>
+  <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain North America Website</h3></a>
+  <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain North America Corp Portal</h3></a>
+  <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">CertainTeed Website</h3></a>
+  <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">CertainTeed Portal</h3></a>
+  <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain Employee Self-Service Portal</h3></a>
+  <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain Careers Website</h3></a>
+        </mat-card>
+         <mat-card class="example-card">
+      <mat-card-title>Technical Support</mat-card-title>
+       <mat-divider></mat-divider>  
+       <h3 class="sub-title1">SGTS Service Desk</h3>  
+       <p>SGTS Service Desk
+          Provides support for things like computers, software installs on PC, computer password issues, company cell phones, VPN, network & email issues, etc.</p>
   
-    </div>   
-      
+         <h3 class="sub-title1">SGNA Application Service Desk</h3>
+          <p>Provides support for applications such as CT Portal/SharePoint, SAP, Loftware, SalesForce, web applications, etc</p>
+  
+          </mat-card>    
+    </div>      
+  </div>    
 </div>

@@ -21,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatButtonModule,
     MatTableModule,
     MatTabsModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSlideToggleModule
   ]
 })
 export class DefaultModule { }

@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
@@ -18,6 +19,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
 import { MatTableModule } from '@angular/material/table';
+import { PreArrivalComponent } from './Tables/pre-arrival/pre-arrival.component';
+import { Day1Component } from './Tables/day1/day1.component';
+import { Week1Component } from './Tables/week1/week1.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -27,7 +32,10 @@ import { MatTableModule } from '@angular/material/table';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
+    PreArrivalComponent,
+    Day1Component,
+    Week1Component
   ],
   imports: [
     CommonModule,
@@ -41,12 +49,17 @@ import { MatTableModule } from '@angular/material/table';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule,
+    MatChipsModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
+    PreArrivalComponent,
+    Week1Component,
+    Day1Component
   ]
 })
 export class SharedModule { }

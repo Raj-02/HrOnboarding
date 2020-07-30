@@ -2,48 +2,9 @@
     <mat-card-title>Admin</mat-card-title>
     <mat-divider></mat-divider>
     <mat-tab-group>
-        <mat-tab label="Pre-Arrival"> <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-            <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-          
-            <!-- Position Column -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-              </ng-container>
-          
-            <!-- Name Column -->
-            <ng-container matColumnDef="Company Codes">
-                <th mat-header-cell *matHeaderCellDef> Company Codes </th>
-                <td mat-cell *matCellDef="let element">
-                     <button mat-raised-button color="primary" (click)="getRecord(element.name)">Approve</button> </td>
-              </ng-container>
-          
-            <!-- Weight Column -->
-            <ng-container matColumnDef="Security Badge">
-                <th mat-header-cell *matHeaderCellDef> Security Badge </th>
-                <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" (click)="getRecord(element.name)">Get Details</button> </td>
-              </ng-container>
-
-            <ng-container matColumnDef="PC Setup">
-                <th mat-header-cell *matHeaderCellDef> PC Setup </th>
-                <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" (click)="getRecord(element.name)">Get Details</button> </td>
-              </ng-container>
-          
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="Tax Paperwork">
-                <th mat-header-cell *matHeaderCellDef> Tax Paperwork </th>
-                <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" (click)="getRecord(element.name)">Get Details</button> </td>
-              </ng-container>
-
-            
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>  </mat-tab>
-        <mat-tab label="1st Day"> 1st Day </mat-tab>
-        <mat-tab label="Week #1"> Week #1 </mat-tab>
+        <mat-tab label="Pre-Arrival"><app-pre-arrival></app-pre-arrival></mat-tab>
+        <mat-tab label="1st Day"><app-day1></app-day1></mat-tab>
+        <mat-tab label="Week #1"><app-week1></app-week1></mat-tab>
       </mat-tab-group>
 
 
