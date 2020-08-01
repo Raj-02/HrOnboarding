@@ -1,38 +1,38 @@
-<div class ="border">
+<div class ="border" >
   <div fxLayout="row" fxLayoutGap="15px">
     <div fxLayout="column"  fxLayoutGap="15px" fxFlex="26">
-        <mat-card class="example-card" >
-            <mat-card-header class="header">                  
-                <mat-card-title >Pre-Arrival Actions</mat-card-title>                    
-            </mat-card-header>                      
-             <mat-divider></mat-divider>             
+        <mat-card class="card">
+          <div class="card-header-blue">
+            <h1 class="card-heading">Pre Arrival</h1>
+          </div>            
              <table>                
-                <tr>                    
+                <tr>                 
                         <td class="sub-title">Action/task</td>
                         <td class="sub-title">Status</td>  
-                        <td></td>  
-                                       
+                        <td></td>                                      
                 </tr>                
-                <tr>         
+                <tr *ngFor="let item of service.listtx">         
                   <td>Tax Paperwork:</td>
-                  <td><span class="pending">Pending</span></td>  
-                  <td><mat-slide-toggle></mat-slide-toggle></td>      
+                  <td *ngIf="item.Tax_Paperwork1 == 'pending   '; else complete"><span class="pending">Pending</span>
+                  <td *ngIf="item.Tax_Paperwork1 == 'approved  '; else complete"><span class="completed">Completed</span>  
+                  </td>
+                  <td ><button mat-icon-button (click)="onTxApprove()" ><mat-icon>check_circle_outline</mat-icon></button></td>      
                 </tr>
-                <tr>
+                <tr *ngFor="let item of service.listpc">
                   <td>PC Setup:</td>
-                  <td><span class="completed">Completed</span></td>  
-                  <td><mat-slide-toggle></mat-slide-toggle></td>            
+                  <td *ngIf="item.PC_Setup1 == 'pending   '; else complete"><span class="pending">Pending</span>
+                  <td *ngIf="item.PC_Setup1 == 'approved  '; else complete"><span class="completed">Completed</span>   
+                    
+                    <td><button mat-icon-button (click)="onPcApprove()" ><mat-icon>check_circle_outline</mat-icon></button></td>           
                 </tr>            
               </table>
         </mat-card>
-        <mat-card class="example-card">
-            <mat-card-header class="header">                  
-                <mat-card-title >1st Day</mat-card-title>                    
-            </mat-card-header>                      
-             <mat-divider></mat-divider>             
+        <mat-card class="card">
+          <div class="card-header-blue">
+            <h1 class="card-heading">Day #1</h1>
+          </div>             
              <table>                
-                <tr>
-                    
+                <tr>                    
                         <td class="sub-title">Action/task</td>
                         <td class="sub-title">Status</td>    
                                          
@@ -50,11 +50,10 @@
                 </tr>            
               </table>
         </mat-card> 
-        <mat-card class="example-card">
-            <mat-card-header class="header">                  
-                <mat-card-title >Week #1</mat-card-title>                    
-            </mat-card-header>                      
-             <mat-divider></mat-divider>             
+        <mat-card class="card">
+          <div class="card-header-blue">
+            <h1 class="card-heading">Week #1</h1>
+          </div>             
              <table>                
                 <tr>                  
                         <td class="sub-title">Action/task</td>
@@ -75,54 +74,57 @@
         </mat-card>   
     </div>
     <div fxLayout="column" fxLayoutGap="15px" fxFlex="24">
-      <mat-card class="example-card">
-        <mat-card-title>Office Location
-        </mat-card-title>
-         <mat-divider></mat-divider>  
-         <h3 class="sub-title1">SGTS Service Desk</h3>  
-         <p>Saint-Gobain/CertainTeed Corporate Office
+      <mat-card class="card">
+        <div class="card-header-blue">
+          <h1 class="card-heading">Office Location</h1>
+        </div>  
+         <h3 class="para" class="sub-title1">SGTS Service Desk</h3>  
+         <p class="para">Saint-Gobain/CertainTeed Corporate Office
           20 Moores Road, Malvern, PA 19355
           Tel: 610-893-5555</p>
     
-           <h3 class="sub-title1">Amenties:</h3>
-            <p>Onsite Gym (learn more)<br>
+           <h3 class="para" class="sub-title1">Amenties:</h3>
+            <p class="para">Onsite Gym (learn more)<br>
               Cafeteria (Hours: M-F 7am - 1:30pm)<br>
               Starbucks (Hours: M-F 7am - 3pm)</p>
 
-            <p>On your first day, upon entering the building via the main entrance proceed to the Security Desk to sign in. Security will alert your manager to come down to greet you.</p>
+            <p class="para">On your first day, upon entering the building via the main entrance proceed to the Security Desk to sign in. Security will alert your manager to come down to greet you.</p>
     
       </mat-card>
     </div>    
     <div fxLayout="column" fxLayoutGap="15px" fxFlex="25">
 
-      <mat-card class="example-card">
-        <mat-card-title>Your Information</mat-card-title>
-        <mat-divider></mat-divider>           
-           <p>SGID: E3028542<br>
+      <mat-card class="card">
+        <div class="card-header-blue">
+          <h1 class="card-heading">Your Informtion</h1>
+        </div>           
+           <p class="para">SGID: E3028542<br>
              Email: eric.marcussen@saint-gobain.com<br>
              Desk Phone: (610) 893-5635<br>
              Cell Phone: (610) 893-5635<br>
              Desk/Office Location: 4C101 (View Floor Plan) Laptop Name: LT0174652</p>             
      </mat-card> 
 
-      <mat-card class="example-card">
-        <mat-card-title>Contact</mat-card-title>
-        <mat-divider></mat-divider>
+      <mat-card class="card">
+        <div class="card-header-blue">
+          <h1 class="card-heading">Contact</h1>
+        </div>
  
          <h3 class="sub-title1">HR</h3>
-           <p>Caitlin Silvestri, (610) 893-5433,<br>
+           <p class="para">Caitlin Silvestri, (610) 893-5433,<br>
                Caitlin.a.silvestri@saint-gobain.com</p>
  
          <h3 class="sub-title1">Buddies</h3>
-           <p>Brian Tribulski, (610) 893-5555,<br>
+           <p class="para">Brian Tribulski, (610) 893-5555,<br>
               Brian.Tribulski@saint-gobain.com</p>    
      </mat-card> 
          
     </div> 
     <div fxLayout="column" fxLayoutGap="15px" fxFlex="25"> 
-        <mat-card class="example-card">
-  <mat-card-title>Useful Links</mat-card-title>
-  <mat-divider></mat-divider>
+        <mat-card class="card">
+          <div class="card-header-blue">
+            <h1 class="card-heading">Useful Links</h1>
+          </div>
   <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain Website</h3></a>
   <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain North America Website</h3></a>
   <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain North America Corp Portal</h3></a>
@@ -131,15 +133,16 @@
   <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain Employee Self-Service Portal</h3></a>
   <a href="https://digital-team-805wb.certainteed.com/hronboarding/"><h3 class="sub-title1">Saint-Gobain Careers Website</h3></a>
         </mat-card>
-         <mat-card class="example-card">
-      <mat-card-title>Technical Support</mat-card-title>
-       <mat-divider></mat-divider>  
+         <mat-card class="card">
+          <div class="card-header-blue">
+            <h1 class="card-heading">Technical Support</h1>
+          </div>  
        <h3 class="sub-title1">SGTS Service Desk</h3>  
-       <p>SGTS Service Desk
+       <p class="para">SGTS Service Desk
           Provides support for things like computers, software installs on PC, computer password issues, company cell phones, VPN, network & email issues, etc.</p>
   
          <h3 class="sub-title1">SGNA Application Service Desk</h3>
-          <p>Provides support for applications such as CT Portal/SharePoint, SAP, Loftware, SalesForce, web applications, etc</p>
+          <p class="para">Provides support for applications such as CT Portal/SharePoint, SAP, Loftware, SalesForce, web applications, etc</p>
   
           </mat-card>    
     </div>      

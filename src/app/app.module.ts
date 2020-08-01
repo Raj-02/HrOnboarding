@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { DefaultModule } from './layouts/default/default.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -20,7 +21,9 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DefaultModule
+    DefaultModule,
+    RouterModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

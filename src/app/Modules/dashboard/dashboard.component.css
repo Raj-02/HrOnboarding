@@ -1,7 +1,23 @@
-.example-card {
- width: 90%;
- margin-right: 2%;
+
+ 
+ .card {
+ 
+  background:#FFF;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border:1px solid #AAA;
+  border-bottom:3px solid #BBB;
+  padding:0px;
+  overflow:hidden;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Roboto', sans-serif;
+  -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .status {
   background: blue;
@@ -32,7 +48,8 @@
     margin-top: 5%;
   }
   .sub-title1 {
-    font-weight: 500;  
+    font-weight: 500; 
+    padding: 4%;
   }
 .pending{
   color: black;
@@ -61,4 +78,70 @@
   vertical-align: baseline;
   border-radius: .25rem;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-header-blue{
+  background-color:#673ab7;
+  color:#FFFFFF;
+  border-bottom:3px solid #BBB;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Roboto', sans-serif;
+  padding:0px;
+  margin-top:0px;
+  overflow:hidden;
+  -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-header{
+  width:100%;
+color:#673ab7;
+  border-bottom:3px solid #BBB;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Roboto', sans-serif;
+  padding-left: 5%;
+    padding-top: 2%;
+  margin-top:0px;
+  overflow:hidden;
+  -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+.mat-card {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  position: relative;
+   padding: 0px; 
+  border-radius: 4px;
+}
+
+.mat-h1, .mat-headline, .mat-typography h1 {
+  font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 10px;
+}
+
+.para{
+  padding: 1% 5% 1% 5%
+}
+
+.mat-typography h1 {
+  font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 3%;
+}
+
+.card-heading {
+  display: block;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 5%;
+  border-bottom: 1px #2196F3;
+  color:#fff;
+ 
 }

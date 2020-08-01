@@ -22,6 +22,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { BrowserModule } from '@angular/platform-browser';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 
 @NgModule({
@@ -50,7 +54,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatTableModule,
     MatTabsModule,
     MatChipsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    BrowserModule,
+    MatIconModule
   ]
 })
 export class DefaultModule { }

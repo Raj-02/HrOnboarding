@@ -1,3 +1,4 @@
+import { OnboardingService } from './onboarding.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
@@ -23,6 +24,7 @@ import { PreArrivalComponent } from './Tables/pre-arrival/pre-arrival.component'
 import { Day1Component } from './Tables/day1/day1.component';
 import { Week1Component } from './Tables/week1/week1.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -51,7 +53,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatTableModule,
     FlexLayoutModule,
     RouterModule,
-    MatChipsModule
+    MatChipsModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,
@@ -60,6 +63,9 @@ import {MatChipsModule} from '@angular/material/chips';
     PreArrivalComponent,
     Week1Component,
     Day1Component
+  ],
+  providers: [
+    OnboardingService
   ]
 })
 export class SharedModule { }

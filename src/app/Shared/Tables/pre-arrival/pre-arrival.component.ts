@@ -1,4 +1,7 @@
+
+
 import { Component, OnInit } from '@angular/core';
+import { OnboardingService } from '../../onboarding.service';
 
 export interface PeriodicElement {
   name: string;
@@ -27,7 +30,7 @@ export class PreArrivalComponent implements OnInit {
 
   displayedColumns: string[] = ['name',  'PC Setup', 'Tax Paperwork'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor( public service: OnboardingService) { }
 
   ngOnInit(): void {
   }
